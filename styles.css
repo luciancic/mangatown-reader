@@ -1,0 +1,63 @@
+/* body {
+    cursor: none;
+} */
+
+header {
+    display: none;
+}
+
+footer {
+    display: none;
+}
+
+#viewer {
+    padding: 2rem;
+}
+
+.manga_read {
+    display: none;
+}
+
+.plug-right {
+    display: none;
+}
+
+button.navigation {
+    background-color: #171b1c;
+    border: 3px solid #303435;
+    border-radius: 100%;
+    cursor: pointer;
+    width: 90px;
+    height: 90px;
+    position: fixed;
+    top: 50vh;
+    margin-top: -45px;
+    z-index: 1;
+}
+button.navigation::before {
+    content: "";
+    position: absolute;
+    border-left: 3px solid #303435;
+    border-bottom: 3px solid #303435;
+    height: 30px;
+    width: 30px;
+}
+
+button#navigate-previous {
+    left: 7vw;
+}
+button#navigate-previous::before {
+    transform: rotate(45deg);
+    bottom: 25px;
+    right: 20px;
+}
+
+button#navigate-next {
+    right: 7vw;
+}
+
+button#navigate-next::before {
+    transform: rotate(-135deg);
+    bottom: 25px;
+    left: 20px;
+}
