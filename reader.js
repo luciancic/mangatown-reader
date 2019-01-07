@@ -4,6 +4,7 @@
         if (document.readyState === "complete") {
             document.getElementById("navigate-previous").onclick = global.wrappedJSObject.previous_page;
             document.getElementById("navigate-next").onclick = global.wrappedJSObject.next_page;
+            document.onkeydown = toggleMenu;
         }
     }
     
@@ -18,6 +19,16 @@
         button.id = id;
         button.className = "navigation";
         document.querySelector("section.main").appendChild(button);
+    }
+
+    function toggleMenu(e) {
+        console.log("Ran function");
+        if (e.key === "Escape") {
+            let header = document.getElementsByTagName("header")[0];
+            let plug = document.getElementsByClassName("plug-right")[0];
+            header.style.height = header.style.height === "" ? "81px" : "";
+            plug.style.width = plug.style.width === "" ? "30px" : "";
+        }
     }
 
 })(window)

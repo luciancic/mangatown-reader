@@ -2,8 +2,36 @@
     cursor: none;
 } */
 
+@keyframes slide {
+    from {
+        height: 0px;
+    } 
+    to {
+        height: 50px;
+    }
+}
+
 header {
-    display: none;
+    height: 0px;
+    width: 100%;
+    overflow: hidden;
+    transition: height 0.7s ease;
+    position: fixed;
+    z-index: 1;
+}
+
+header .menu-nav.menu-page{
+    position: relative;
+    padding: 15px 0;
+    overflow: hidden;
+}
+
+header .menu-fixed {
+    background-color: #e7e7e7;
+}
+
+header .menu-fixed ul {
+    top: 20px;
 }
 
 footer {
@@ -19,7 +47,8 @@ footer {
 }
 
 .plug-right {
-    display: none;
+    transition: width 0.7s ease-in-out;
+    width: 0px;
 }
 
 button.navigation {
