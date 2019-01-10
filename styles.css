@@ -184,6 +184,10 @@ select {
 }
 
 /* The site navigation with login search and fb like */
+body {
+    background-color: #171b1c;
+}
+
 .plug-right {
     transition: width 0.7s ease-in-out;
     width: 0px;
