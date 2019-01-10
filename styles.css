@@ -5,17 +5,17 @@ Made from the original header
 
 header {
     height: 0px;
-    width: 100%;
     overflow: hidden;
-    transition: height 0.7s ease;
     position: fixed;
+    transition: height 0.7s ease;
+    width: 100%;
     z-index: 1;
 }
 
 header .menu-nav.menu-page{
-    position: relative;
-    padding: 15px 0;
     overflow: hidden;
+    padding: 15px 0;
+    position: relative;
 }
 
 header .menu-fixed {
@@ -42,19 +42,19 @@ button.navigation {
     border: 3px solid #303435;
     border-radius: 100%;
     cursor: pointer;
-    width: 90px;
     height: 90px;
+    margin-top: -45px;
     position: fixed;
     top: 50vh;
-    margin-top: -45px;
+    width: 90px;
     z-index: 1;
 }
 button.navigation::before {
-    content: "";
-    position: absolute;
     border-left: 3px solid #303435;
     border-bottom: 3px solid #303435;
+    content: "";
     height: 30px;
+    position: absolute;
     width: 30px;
 }
 
@@ -62,9 +62,9 @@ button#navigate-previous {
     left: 7vw;
 }
 button#navigate-previous::before {
-    transform: rotate(45deg);
     bottom: 25px;
     right: 20px;
+    transform: rotate(45deg);
 }
 
 button#navigate-next {
@@ -72,9 +72,9 @@ button#navigate-next {
 }
 
 button#navigate-next::before {
-    transform: rotate(-135deg);
     bottom: 25px;
     left: 20px;
+    transform: rotate(-135deg);
 }
 
 
@@ -87,19 +87,20 @@ button#navigate-next::before {
 Customized footer 
 Recycled from existing component on the page
 */
+
 .manga_read:first-child {
     background-color: #171b1c;
-    display: block;
-    height: 0px;
-    transition: all 0.7s ease;
-    padding: 0;
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-    z-index: 1;
     border-top: ridge #e7e7e7;
     border-top-width: 0px;
+    bottom: 0;
+    display: block;
+    height: 0px;
     overflow: hidden;
+    padding: 0;
+    position: fixed;
+    transition: all 0.7s ease;
+    width: 100vw;
+    z-index: 1;
 }
   
 .manga_read:first-child .title {
@@ -109,29 +110,28 @@ Recycled from existing component on the page
 }
   
 .manga_read:first-child h2{
-    visibility: visible;
-    position: absolute;
     left: 50px;
     padding-top: 30px;
+    position: absolute;
+    visibility: visible;
 }
   
 .manga_read:first-child h2:before  {
-    content: "Now reading: ";
     font-size: 26px;
     color: #fe8006;
+    content: "Now reading: ";
 }
   
 .manga_read:first-child h2 a  {
     font-size: 26px;
 }
 
-
 .manga_read .go_page::before {
+    color: #fe8006;
     content: "Chapter: ";
     font-size: 16px;
-    color: #fe8006;
-    padding-left: 50px;
     padding-right: 10px;
+    padding-left: 50px;
 }
 
 .manga_read .go_page{
@@ -139,21 +139,21 @@ Recycled from existing component on the page
 }
 
 #top_chapter_list {
-    position: relative;
     display: inline;
+    position: relative;
 }
 
 .manga_read .go_page .page_select {
-    position: relative;
     display: inline;
+    position: relative;
 }
 
 .manga_read .go_page .page_select::before {
+    color: #fe8006;
     content: "Page: ";
     font-size: 16px;
-    color: #fe8006;
-    padding-left: 30px;
     padding-right: 10px;
+    padding-left: 30px;
 }
 
 .manga_read .go_page .page_select a {
