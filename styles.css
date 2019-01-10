@@ -1,15 +1,7 @@
-/* body {
-    cursor: none;
-} */
-
-@keyframes slide {
-    from {
-        height: 0px;
-    } 
-    to {
-        height: 50px;
-    }
-}
+/* 
+Customized header 
+Made from the original header
+*/
 
 header {
     height: 0px;
@@ -34,22 +26,16 @@ header .menu-fixed ul {
     top: 20px;
 }
 
-footer {
-    display: none;
-}
 
-#viewer {
-    padding: 2rem;
-}
 
-.manga_read {
-    display: none;
-}
 
-.plug-right {
-    transition: width 0.7s ease-in-out;
-    width: 0px;
-}
+
+
+
+
+/* 
+Custom added navigation buttons 
+*/
 
 button.navigation {
     background-color: #171b1c;
@@ -89,4 +75,128 @@ button#navigate-next::before {
     transform: rotate(-135deg);
     bottom: 25px;
     left: 20px;
+}
+
+
+
+
+
+
+
+/* 
+Customized footer 
+Recycled from existing component on the page
+*/
+.manga_read:first-child {
+    background-color: #171b1c;
+    display: block;
+    height: 0px;
+    transition: all 0.7s ease;
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    z-index: 1;
+    border-top: ridge #e7e7e7;
+    border-top-width: 0px;
+    overflow: hidden;
+}
+  
+.manga_read:first-child .title {
+    /* Hidden with visibility and not display so that
+    a child (the h2) can be made visible */
+    visibility: hidden;
+}
+  
+.manga_read:first-child h2{
+    visibility: visible;
+    position: absolute;
+    left: 50px;
+    padding-top: 30px;
+}
+  
+.manga_read:first-child h2:before  {
+    content: "Now reading: ";
+    font-size: 26px;
+    color: #fe8006;
+}
+  
+.manga_read:first-child h2 a  {
+    font-size: 26px;
+}
+
+
+.manga_read .go_page::before {
+    content: "Chapter: ";
+    font-size: 16px;
+    color: #fe8006;
+    padding-left: 50px;
+    padding-right: 10px;
+}
+
+.manga_read .go_page{
+    margin-top: 55px;
+}
+
+#top_chapter_list {
+    position: relative;
+    display: inline;
+}
+
+.manga_read .go_page .page_select {
+    position: relative;
+    display: inline;
+}
+
+.manga_read .go_page .page_select::before {
+    content: "Page: ";
+    font-size: 16px;
+    color: #fe8006;
+    padding-left: 30px;
+    padding-right: 10px;
+}
+
+.manga_read .go_page .page_select a {
+    display: none;
+}
+  
+.manga_read:first-child .go_page_btn  {
+    display: none;
+}
+
+
+
+
+
+
+/* 
+Miscellaneous
+*/
+
+/* On small manga pages there should be no scroll bar*/
+.main {
+    min-height: 100vh;
+}
+
+/* To make labels next to select items align nicely */
+select {
+    vertical-align: unset;
+}
+
+/* The site navigation with login search and fb like */
+.plug-right {
+    transition: width 0.7s ease-in-out;
+    width: 0px;
+}
+
+footer {
+    display: none;
+}
+
+#viewer {
+    padding: 2rem;
+}
+
+.manga_read {
+    display: none;
 }
