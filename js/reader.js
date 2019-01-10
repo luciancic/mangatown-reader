@@ -9,10 +9,11 @@
         }
     }
     
-    // Load here so that it's immediately visible
+    // Load here so that it takes effect immediately
     document.addEventListener("DOMContentLoaded", function() {
         lib.addButton("navigate-previous");
         lib.addButton("navigate-next");
+        lib.hideCursor();
         document.getElementById("top_chapter_list").classList.remove("chapter_select");
     })
 

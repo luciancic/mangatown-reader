@@ -1,7 +1,6 @@
 (function LibIIFE(global) {
-    // The whole library is defined on a single global object, for maximum 
-    // protection against side effects.
-    global.MangatownReaderLib = { addButton, toggleMenu, makeCountdown };
+    
+    global.MangatownReaderLib = { addButton, toggleMenu, makeCountdown, hideCursor };
 
 
     // Each button is styled based on its id (styles.css)
@@ -23,8 +22,28 @@
             footer.style.borderTopWidth = footer.style.borderTopWidth === "" ? "10px" : "";
         }
     }
+
+    function hideCursor() {
+        makeCursorStyler("none")();
+    }
     
+    function makeCountdown() {
+        // They are created here because the lib script loads before the DOM is populated
+        // the calling function is responsible for the timing of the call.
+        hideCursor = makeCursorStyler("none");
+        showCursor = makeCursorStyler("unset");
+        // Encapsulates the timeoutID
+        let timeoutID;
+        return function() {
+            showCursor();
+            clearTimeout(timeoutID);
+            timeoutID = setTimeout(function() {hideCursor()}, 2500);
+        }
+    }
     
+
+
+
     // Captures elements and cursor style in a closure and
     // returns a simple function for you to use.
     function makeCursorStyler(cursorStyle) {
@@ -42,20 +61,6 @@
             for (el of elements) {
                 el.style.cursor = cursorStyle;
             }
-        }
-    }
-    
-    function makeCountdown() {
-        // They are created here because the lib script loads before the DOM is populated
-        // the calling function is responsible for the timing of the call.
-        hideCursor = makeCursorStyler("none");
-        showCursor = makeCursorStyler("unset");
-        // Encapsulates the timeoutID
-        let timeoutID;
-        return function() {
-            showCursor();
-            clearTimeout(timeoutID);
-            timeoutID = setTimeout(function() {hideCursor()}, 2500);
         }
     }
 
