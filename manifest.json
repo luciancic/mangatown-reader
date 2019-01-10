@@ -7,7 +7,7 @@
         {
             "matches": ["http://www.mangatown.com/manga/*/c*"],
             "css": ["styles.css"],
-            "js": ["reader.js"],
+            "js": ["./js/lib.js", "./js/reader.js"],
             "run_at": "document_start"
         }
     ],
