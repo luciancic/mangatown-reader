@@ -11,15 +11,32 @@
         document.querySelector("section.main").appendChild(button);
     }
     
+    let menuIsHidden = true;
+
     function toggleMenu(e) {
         if (e.key === "Escape") {
             let header = document.getElementsByTagName("header")[0];
             let plug = document.getElementsByClassName("plug-right")[0];
             let footer = document.getElementsByClassName("manga_read")[0];
-            header.style.height = header.style.height === "" ? "81px" : "";
-            plug.style.width = plug.style.width === "" ? "30px" : "";
-            footer.style.height = footer.style.height === "" ? "160px" : "";
-            footer.style.borderTopWidth = footer.style.borderTopWidth === "" ? "10px" : "";
+            
+            if (menuIsHidden) {
+                menuIsHidden = false;
+                header.style.height = "81px";
+                plug.style.width = "30px";
+                footer.style.height = "160px";
+                footer.style.borderTopWidth = "10px";
+                // Manually make the cursor visible
+                makeCursorStyler("unset")();
+                clearTimeout(timeoutID);
+            } else {
+                menuIsHidden = true;
+                header.style.height = "";
+                plug.style.width = "";
+                footer.style.height = "";
+                footer.style.borderTopWidth = "";
+                // Manually make set the timer for the cursor to hide
+                makeCountdown()();
+            }
         }
     }
 
@@ -27,17 +44,19 @@
         makeCursorStyler("none")();
     }
     
+    let timeoutID;
+
     function makeCountdown() {
         // They are created here because the lib script loads before the DOM is populated
         // the calling function is responsible for the timing of the call.
         hideCursor = makeCursorStyler("none");
         showCursor = makeCursorStyler("unset");
-        // Encapsulates the timeoutID
-        let timeoutID;
         return function() {
-            showCursor();
-            clearTimeout(timeoutID);
-            timeoutID = setTimeout(function() {hideCursor()}, 2500);
+            if (menuIsHidden) {
+                showCursor();
+                clearTimeout(timeoutID);
+                timeoutID = setTimeout(function() {hideCursor()}, 2500);
+            }
         }
     }
     
