@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
     "name": "Mangatown Reader",
-    "version": "0.0.0",
-    "description": "An extension to make reading mangas on mangatown more pleasant.",
+    "version": "1.0.0",
+    "description": "An add-on to make reading manga on mangatown more pleasant.",
     "content_scripts": [
         {
             "matches": ["http://www.mangatown.com/manga/*/c*"],
