@@ -183,9 +183,9 @@ select {
     vertical-align: unset;
 }
 
-/* The site navigation with login search and fb like */
-body {
-    background-color: #171b1c;
+/* Fixes bug where there is some bottom space on small pages */
+section.main {
+    margin-bottom: -4px;
 }
 
 .plug-right {
