@@ -173,9 +173,11 @@ Recycled from existing component on the page
 Miscellaneous
 */
 
-/* On small manga pages there should be no scroll bar*/
-.main {
+section.main {
+    /* On small manga pages there should be no scroll bar*/
     min-height: 100vh;
+    /* Fixes bug where there is some bottom space on small pages */
+    margin-bottom: -4px;
 }
 
 /* To make labels next to select items align nicely */
@@ -183,10 +185,6 @@ select {
     vertical-align: unset;
 }
 
-/* Fixes bug where there is some bottom space on small pages */
-section.main {
-    margin-bottom: -4px;
-}
 
 .plug-right {
     transition: width 0.7s ease-in-out;
